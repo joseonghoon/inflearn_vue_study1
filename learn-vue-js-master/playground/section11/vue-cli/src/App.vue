@@ -1,0 +1,33 @@
+<template>
+  <div>
+    {{ str }}
+    <app-header 
+      v-bind:propsdata="str"
+      v-on:renew="renewStr"></app-header>
+  </div>
+</template>
+
+<script>
+import AppHeader from './components/AppHeader.vue';
+
+export default {
+  components: { AppHeader },
+  data: function(){
+    return {
+      str: 'Header'
+    }
+  },
+  comments: {
+    'app-header': AppHeader
+  },
+  methods: {
+    renewStr: function(){
+      this.str = 'change'
+    }
+  }
+}
+</script>
+
+<style>
+
+</style>
